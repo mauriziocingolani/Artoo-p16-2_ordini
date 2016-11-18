@@ -1,5 +1,8 @@
 <?php
-$title = 'Pagina creazione cliente';
+include_once './config/init.php';
+
+$title = 'Pagina aggiornamento cliente';
+$cliente = Cliente::Cerca($_GET);
 ?>
 
 <!-- header -->

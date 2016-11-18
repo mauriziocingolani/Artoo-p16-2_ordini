@@ -21,15 +21,21 @@ include './templates/header.php';
             <th>Nome</th>
             <th>Cognome</th>
             <th>Email</th>
+            <th />
         </tr>
     </thead>
     <tbody>
         <?php foreach ($clienti as $value) : ?>
             <tr>
-                <td><?php echo $value['ClienteID'] ?></td>
-                <td><?php echo $value['Nome'] ?></td>
-                <td><?php echo $value['Cognome'] ?></td>
-                <td><?php echo $value['Email'] ?></td>
+                <td><?php echo $value['ClienteID']; ?></td>
+                <td><?php echo $value['Nome']; ?></td>
+                <td><?php echo $value['Cognome']; ?></td>
+                <td><?php echo $value['Email']; ?></td>
+                <td>
+                    <a href="cliente_modifica.php?clienteid=<?php echo $value['ClienteID']; ?>">
+                        Modifica
+                    </a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>

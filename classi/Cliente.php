@@ -24,6 +24,12 @@ class Cliente {
         return $GLOBALS['db']->chiedi($sqlString)->fetch_all(MYSQLI_ASSOC);
     }
 
+    public static function Cerca(array $get) {
+        $sqlString = "SELECT * FROM clienti WHERE ClienteID={$get['clienteid']}";
+        $clienti = $GLOBALS['db']->chiedi($sqlString)->fetch_all(MYSQLI_ASSOC);
+        return $clienti[0];
+    }
+
     private static function _cleanString($string) {
         return str_replace("'", "''", $string);
     }
