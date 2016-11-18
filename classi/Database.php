@@ -1,6 +1,5 @@
 <?php
 
-
 class Database {
 
     private $connection;
@@ -20,7 +19,7 @@ class Database {
     public function chiudi() {
         if (!$this->connection instanceof mysqli)
             throw new Exception('Connessione già chiusa!');
-        $this->connectio->close();
+        $this->connection->close();
         $this->connection = null;
 //        self::$istanza=null;# NOOOOOOO!!!
     }

@@ -5,7 +5,6 @@ $title = 'Pagina creazione cliente';
 
 if (count($_POST) > 0) :
     $risultato = Cliente::AggiungiNuovo($_POST);
-
 endif;
 ?>
 
@@ -17,6 +16,17 @@ include './templates/header.php';
 <!-- contenuto pagina -->
 
 <h1>Aggiungi nuovo cliente</h1>
+
+<div>
+    <?php
+    if (!isset($risultato)) :
+    elseif (is_bool($risultato)) :
+        echo 'TUTTO OK! Cliente creato!';
+    elseif (is_string($risultato)) :
+        echo $risultato;
+    endif;
+    ?>
+</div>
 
 <form method="post" action="">
     <table>
